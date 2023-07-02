@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #121720;
+  --mytext-color: #FFFFFF;
+  --small-text :#000000;
+  --secondary-color: #8EA8C3;
+  --cards-color: #21262D ;
+}
+
+
+ion-icon {
+  color: var(--mytext-color);
+  font-size: 40px;
+}
+
+ion-icon:hover {
+  scale: 115%;
+}
