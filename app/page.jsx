@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import projectimg from "./public/project-img.jpg";
-import CV from './public/resume.pdf';
+import resume from "./public/resume.pdf";
 
 
 export default function Home() {
@@ -79,9 +79,9 @@ export default function Home() {
 
             <div className="py-4">
               <a 
-                href={CV}
+                href={resume}
                 target="_blank"
-                download="SpiroHeqimiCV.pdf">
+                download="resume.pdf">
                 <button className="bg-violet-700 text-xl text-white px-8 py-3 rounded-full hover:scale-105 duration-100">
                   Download CV
                 </button>
