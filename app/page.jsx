@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import projectimg from "./public/project-img.jpg";
+import CV from './public/SpiroHeqimiresume.pdf';
 
 
 export default function Home() {
@@ -77,10 +78,14 @@ export default function Home() {
             </div>
 
             <div className="py-4">
-              <a href="rapp/app/public/SpiroHeqimiresume.pdf" download>
-              <button className="bg-violet-700 text-xl text-white px-8 py-3 rounded-full hover:scale-105 duration-100">
-                Download CV
-              </button>
+              <a 
+                href={CV}
+                target="_blank"
+                rel="noreferrer"
+                download>
+                <button className="bg-violet-700 text-xl text-white px-8 py-3 rounded-full hover:scale-105 duration-100">
+                  Download CV
+                </button>
               </a>
             </div>
 
