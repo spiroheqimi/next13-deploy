@@ -71,7 +71,7 @@ export default function ContactForm() {
           type="text"
           value={email}
           onChange={ e => setEmail(e.target.value)}
-          pattern= '[a-zA-Z][a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$'
+          pattern= '[a-zA-Z][a-zA-Z0-9]+\.)+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$'
           className="py-2 px-3 rounded-lg border-2 outline-none border-mytext-color"
           autoComplete="off"
           required
