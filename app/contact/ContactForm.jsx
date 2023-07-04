@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -23,8 +27,10 @@ export default function ContactForm() {
       body: JSON.stringify(data),
     });
 
-
-    notify()
+    setName('');
+    setEmail('');
+    setMessage('');
+    notify();
   };
 
   const notify = () => {
@@ -50,6 +56,8 @@ export default function ContactForm() {
         <input
           id="name"
           type="text"
+          onChange={ e => setName(e.target.value)}
+          value={name}
           pattern="[a-zA-Z][\w ]{1,15}"
           autoComplete="off"
           className="py-2 px-3 rounded-lg border-2 outline-none border-mytext-color"
@@ -61,6 +69,8 @@ export default function ContactForm() {
         <input
           id="email"
           type="text"
+          value={email}
+          onChange={ e => setEmail(e.target.value)}
           pattern= '[a-zA-Z][a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$'
           className="py-2 px-3 rounded-lg border-2 outline-none border-mytext-color"
           autoComplete="off"
@@ -72,6 +82,8 @@ export default function ContactForm() {
         <textarea
           id="message"
           name="message"
+          value={message}
+          onChange={ e => setMessage(e.target.value)}
           maxLength={350}
           className="py-2 px-3 rounded-lg border-2 outline-none border-mytext-color"
           rows="6"

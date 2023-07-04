@@ -75,13 +75,13 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="py-4">         
+            {/* <div className="py-4">         
                 <button className="bg-violet-700 text-xl text-white px-8 py-3 rounded-full hover:scale-105 duration-100">
                   <a href="./public/files/resume.pdf" target="_blank" download>
                     Download CV
                   </a>
                 </button>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex items-center justify-center xl:w-2/5 max-xl:hidden xl:mx-10">
