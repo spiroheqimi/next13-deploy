@@ -1,10 +1,8 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import projectimg from "./public/project-img.jpg";
-import resume from "./public/resume.pdf";
-
 
 export default function Home() {
   let projects = [
@@ -12,21 +10,21 @@ export default function Home() {
       id: 1,
       name: "Project 1",
       par: "Sign in / Sign up Validation ",
-      status: "Comming Soon",
+      status: "Coming Soon",
       link: "/projects",
     },
     {
       id: 2,
       name: "Project 2",
       par: `E-commerce website`,
-      status: "Comming Soon",
+      status: "Coming Soon",
       link: "/projects",
     },
     {
       id: 3,
       name: "Project 3",
       par: "Weather App",
-      status: "Comming Soon",
+      status: "Coming Soon",
       link: "/projects",
     },
     {
@@ -42,6 +40,8 @@ export default function Home() {
       link: "/projects",
     },
   ];
+
+  
 
   return (
     <>
@@ -62,36 +62,29 @@ export default function Home() {
             </p>
 
             <div className="z-0 flex items-start gap-5 py-4">
-              
-              <button >
+              <button>
                 <Link href="https://github.com/spiroheqimi">
                   <ion-icon name="logo-github"></ion-icon>
                 </Link>
               </button>
 
-              <button >
+              <button>
                 <Link href="https://www.linkedin.com/in/spiro-heqimi-b80295236/">
                   <ion-icon name="logo-linkedin"></ion-icon>
                 </Link>
               </button>
-
             </div>
 
-            <div className="py-4">
-              <a 
-                href={resume}
-                target="_blank"
-                download="resume.pdf">
+            <div className="py-4">         
                 <button className="bg-violet-700 text-xl text-white px-8 py-3 rounded-full hover:scale-105 duration-100">
-                  Download CV
+                  <a href="./public/files/resume.pdf" target="_blank" download>
+                    Download CV
+                  </a>
                 </button>
-              </a>
             </div>
-
           </div>
 
           <div className="flex items-center justify-center xl:w-2/5 max-xl:hidden xl:mx-10">
- 
             <Image
               className="rounded-xl "
               src={projectimg}
@@ -99,7 +92,6 @@ export default function Home() {
               height={800}
               alt="project 1"
             />
-
           </div>
         </div>
       </main>
@@ -110,13 +102,11 @@ export default function Home() {
             <h1 className="md:text-2xl text-lg top-0"> My Project </h1>
             <div className="h-full w-full flex flex-wrap justify-center pt-16">
               {projects.map((proj) => (
-
                 <div
                   key={proj.id}
                   className={`flex flex-col bg-cards-color text-mytext-color shadow-lg shadow-slate-900 w-90 h-128 rounded-2xl overflow-hidden m-10 cursor-pointer hover:shadow-lg hover:shadow-violet-700 duration-300`}
-                  onClick={ () => ( window.open(proj.link) )}
+                  onClick={() => window.open(proj.link)}
                 >
-
                   <Image
                     src={projectimg}
                     width={500}
@@ -129,7 +119,6 @@ export default function Home() {
                     <p className="text-center"> {proj.par} </p>
                     <p className="text-center pt-10"> {proj.status} </p>
                   </div>
-
                 </div>
               ))}
             </div>
@@ -139,4 +128,3 @@ export default function Home() {
     </>
   );
 }
-
